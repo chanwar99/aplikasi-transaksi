@@ -78,7 +78,6 @@ class Dashboard extends CI_Controller
 	function get_data_trans()
 	{
 		$list = $this->Sale_model->get_datatables();
-		// var_dump($list);
 		$data = [];
 		$no = $_POST['start'];
 		foreach ($list as $field) {
@@ -112,7 +111,6 @@ class Dashboard extends CI_Controller
 			"recordsFiltered" => $this->Sale_model->count_filtered(),
 			"data" => $data,
 		);
-		//output dalam format JSON
 		echo json_encode($output);
 	}
 }

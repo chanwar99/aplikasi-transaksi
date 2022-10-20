@@ -53,40 +53,6 @@ class Sale extends CI_Controller
         echo json_encode($data);
     }
 
-    // public function get_form_data($dataType)
-    // {
-    //     $title = "";
-    //     switch ($dataType) {
-    //         case 'ItemAdd':
-    //             $title = "Tambah Data Barang";
-    //             break;
-    //         case 'ItemEdit':
-    //             $title = "Ubah Data Barang";
-    //             break;
-    //     }
-    //     $data = [
-    //         'title' => $title
-    //     ];
-    //     echo json_encode($data);
-    // }
-
-    // public function sale_add()
-    // {
-    //     $data1 = [
-    //         'kode' => $this->input->post('saleCode'),
-    //         'tgl' => $this->input->post('saleDate'),
-    //         'cust_id' => $this->input->post('idCust'),
-    //         'subtotal' => $this->input->post('subTotal'),
-    //         'diskon' =>    $this->input->post('disc'),
-    //         'ongkir' =>    $this->input->post('shipping'),
-    //         'total_bayar' => $this->input->post('totalFee'),
-    //     ];
-
-    //     if ($this->sale_model->addSale($data1)) {
-    //         echo json_encode(true);
-    //     }
-    // }
-
     public function get_all_cust()
     {
         $key = $this->input->get('key');

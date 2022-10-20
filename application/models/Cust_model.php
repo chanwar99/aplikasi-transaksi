@@ -4,11 +4,6 @@ class Cust_model extends CI_Model
 {
     private $_table = 'm_customer';
 
-    // public function addItem($data)
-    // {
-    //     return $this->db->insert($this->_table, $data);
-    // }
-
     public function getAllCust($key)
     {
         $this->db->like('kode', $key);

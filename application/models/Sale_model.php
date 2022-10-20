@@ -7,9 +7,9 @@ class Sale_model extends CI_Model
     private $_m_customer = 'm_customer';
     private $_m_barang = 'm_barang';
 
-    var $column_order = array(null, null, 'tgl', null, 'juml_brg', 'subtotal', null, null, 'total_bayar'); //field yang ada di table user
-    var $column_search = array('name'); //field yang diizin untuk pencarian 
-    var $order = array('tgl' => 'asc'); // default order 
+    var $column_order = array(null, null, 'tgl', null, 'juml_brg', 'subtotal', null, null, 'total_bayar');
+    var $column_search = array('name');
+    var $order = array('tgl' => 'asc');
 
     public function __construct()
     {
@@ -29,13 +29,10 @@ class Sale_model extends CI_Model
 
         $i = 0;
 
-        foreach ($this->column_search as $item) // looping awal
-        {
-            if ($_POST['search']['value']) // jika datatable mengirimkan pencarian dengan metode POST
-            {
+        foreach ($this->column_search as $item) {
+            if ($_POST['search']['value']) {
 
-                if ($i === 0) // looping awal
-                {
+                if ($i === 0) {
                     $this->db->group_start();
                     $this->db->like($item, $_POST['search']['value']);
                 } else {

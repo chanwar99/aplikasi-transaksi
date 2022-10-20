@@ -121,23 +121,10 @@ $(function () {
 				data: $(form).serialize(),
 				success: function (response) {
 					if (response) {
-						// if ($('#SaleFormModal form').attr('data-type') == 'SaleEdit') {
-						//     // console.log($("tr[data-id='" +  response.id + "']"));
-						//     $("tr[data-id='" +  response.currId + "']").remove();
-						//     // alert("bajingan");
-						// }
-
 						if (response.no == "") {
-							//insert
-							// alert("kosong");
-							// $('#disco').val("0.00");
-							// $('#okr').val("0.00");
 							$("#SaleRow").append(response.html);
 						} else {
-							// $('#SaleRow').append(response.html);
-							// alert(response.currId);
 							$("tr[data-no='" + response.no + "']").replaceWith(response.html);
-							// $('#SaleRow').append(response.html);
 						}
 						var no = 1;
 						$("#SaleRow tr").each(function (i) {
@@ -227,42 +214,6 @@ $(function () {
 		totbar();
 	});
 
-	// $('#btnReset').click(function(e) {
-	//     e.preventDefault();
-	//     location.reload();
-	// });
-
-	// var saveSale = $('#ItemFormModal form').validate({
-	//     errorClass: 'invalid-feedback',
-	//     highlight: function(element) {
-	// 		$(element).removeClass("error");
-	// 	},
-	//     rules: {
-	//         itemCode: {
-	//             required: true,
-	//         },
-	//         itemName: {
-	//             required: true,
-	//         },
-	//         // itemPrice: {
-	//         //     required: true,
-	//         // },
-
-	//     },
-	//     submitHandler: function(form) {
-	//         $.ajax({
-	//             url: site + "item/item_add",
-	//             type: "POST",
-	//             data: $(form).serialize(),
-	//             success: function(response) {
-	//                 if (response) {
-	//                     alert("ok");
-	//                 }
-	//             }
-	//         });
-	//     }
-	// });
-
 	$("#saleSubmit").validate({
 		submitHandler: function (form) {
 			if (
@@ -312,7 +263,6 @@ $(function () {
 		autoWidth: false,
 		columnDefs: [
 			{
-				// width: "100%",
 				targets: [0, 1, 3, 6, 7],
 				orderable: false,
 			},
