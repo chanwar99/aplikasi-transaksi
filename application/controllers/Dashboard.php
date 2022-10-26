@@ -90,7 +90,7 @@ class Dashboard extends CI_Controller
 
 			$html = $this->detail_modal($detail, $no);
 			$row[] = $html;
-			$row[] = $field->kode;
+			$row[] = $field->kode_sale;
 			$row[] = $field->tgl;
 			$row[] = $field->name;
 			$row[] = $field->juml_brg;

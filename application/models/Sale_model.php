@@ -20,7 +20,7 @@ class Sale_model extends CI_Model
     private function _get_datatables_query()
     {
 
-        $this->db->select('*, SUM(t_sales_det.qty) AS juml_brg');
+        $this->db->select('*, SUM(t_sales_det.qty) AS juml_brg, t_sales.kode AS kode_sale');
         $this->db->from($this->_t_sales_det);
         $this->db->join($this->_t_sales, 't_sales_det.sales_id = t_sales.id');
         $this->db->join($this->_m_customer, 't_sales.cust_id = m_customer.id');
